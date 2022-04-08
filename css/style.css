@@ -1,0 +1,7 @@
+#search-btn:hover::before{
+    content: 'Search';
+    transform: content 4s ease-in-out;
+}
+#search-btn{
+    font-size: 20px;
+}
