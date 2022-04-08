@@ -39,9 +39,7 @@ const displaySearchResult = (phones) => {
         <div class="card-body">
             <h5 class="card-title">${phone.phone_name}</h5>
             <p class="card-text">Brand: ${phone.brand}</p>
-            <div class="card-footer">
-                <button class="btn btn-primary">Show more</button>
-            </div>
+            <button class="btn btn-primary">Show more</button>
         </div>
     </div>
     `;
