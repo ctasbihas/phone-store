@@ -1,7 +1,11 @@
-#search-btn:hover::after{
-    content: 'Search';
-    transform: content 4s ease-in-out;
-}
 #search-btn{
     font-size: 20px;
+    align-items: center;
+}
+#search-btn:hover::before{
+    content: 'Search';
+}
+
+#spinner{
+    display: none;
 }

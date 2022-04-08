@@ -4,6 +4,8 @@ const searchPhone = () => {
   
   // clear data
   searchField.value = '';
+  toggleSearchResult('none');
+  toggleSpinner('block');
   if (searchText == '') {
     const emptySearchText = document.getElementById('search-text-empty');
     emptySearchText.innerText = 'Please write a phone name to get result';
@@ -14,11 +16,16 @@ const searchPhone = () => {
       .then((data) => displaySearchResult(data.data));
 
     const emptySearchText = document.getElementById('search-text-empty');
-    emptySearchText.style.display = 'none'
+    emptySearchText.style.display = 'none';
   }
 };
 
-
+const toggleSpinner = displayStyle => {
+  document.getElementById('spinner').style.display = displayStyle;
+}
+const toggleSearchResult = displayStyle => {
+  document.getElementById('search-result').style.display = displayStyle;
+}
 
 const displaySearchResult = (phones) => {
   const searchResult = document.getElementById("search-result");
@@ -39,10 +46,7 @@ const displaySearchResult = (phones) => {
     </div>
     `;
     searchResult.appendChild(div);
+    toggleSearchResult('block');
   });
+  toggleSpinner('none');
 };
-
-function loadingSpinner(){
-  const spinner = document.getElementById('spinner');
-  spinner.classList.add('spinner-border');
-}
