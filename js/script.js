@@ -4,19 +4,19 @@ const searchPhone = () => {
   
   // clear data
   searchField.value = '';
-  toggleSearchResult('none');
-  toggleSpinner('block');
   if (searchText == '') {
     const emptySearchText = document.getElementById('search-text-empty');
     emptySearchText.innerText = 'Please write a phone name to get result';
   } else {
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
     fetch(url)
-      .then((res) => res.json())
-      .then((data) => displaySearchResult(data.data));
-
+    .then((res) => res.json())
+    .then((data) => displaySearchResult(data.data));
+    
     const emptySearchText = document.getElementById('search-text-empty');
     emptySearchText.style.display = 'none';
+    toggleSearchResult('none');
+    toggleSpinner('block');
   }
 };
 
@@ -46,7 +46,7 @@ const displaySearchResult = (phones) => {
     </div>
     `;
     searchResult.appendChild(div);
-    toggleSearchResult('block');
   });
+  toggleSearchResult('flex');
   toggleSpinner('none');
 };
