@@ -1,21 +1,31 @@
+const toggleSpinner = displayStyle => {
+  document.getElementById('spinner').style.display = displayStyle;
+}
+const toggleSearchResult = displayStyle => {
+  document.getElementById('search-result').style.display = displayStyle;
+}
+
 const searchPhone = () => {
   const searchField = document.getElementById("search-field");
   const searchText = searchField.value;
+  
   // clear data
   searchField.value = '';
   if (searchText == '') {
-      const emptySearchText = document.getElementById('search-text-empty');
-      emptySearchText.innerText = 'Please write a phone name to get result';
-    } else {
-        const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
-        fetch(url)
-        .then((res) => res.json())
-        .then((data) => displaySearchResult(data.data));
-        
+    const emptySearchText = document.getElementById('search-text-empty');
+    emptySearchText.innerText = 'Please write a phone name to get result';
+  } else {
+    const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => displaySearchResult(data.data));
+
     const emptySearchText = document.getElementById('search-text-empty');
     emptySearchText.style.display = 'none'
   }
 };
+
+
 
 const displaySearchResult = (phones) => {
   const searchResult = document.getElementById("search-result");
