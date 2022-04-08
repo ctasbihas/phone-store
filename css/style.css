@@ -5,6 +5,7 @@
     width: 35px;
     transition: width 400ms ease-in-out;
     padding-left: 7px;
+    border-radius: 10px;
 }
 
 #search-btn:hover{
