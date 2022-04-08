@@ -1,10 +1,3 @@
-const toggleSpinner = displayStyle => {
-  document.getElementById('spinner').style.display = displayStyle;
-}
-const toggleSearchResult = displayStyle => {
-  document.getElementById('search-result').style.display = displayStyle;
-}
-
 const searchPhone = () => {
   const searchField = document.getElementById("search-field");
   const searchText = searchField.value;
@@ -48,3 +41,8 @@ const displaySearchResult = (phones) => {
     searchResult.appendChild(div);
   });
 };
+
+function loadingSpinner(){
+  const spinner = document.getElementById('spinner');
+  spinner.classList.add('spinner-border');
+}
