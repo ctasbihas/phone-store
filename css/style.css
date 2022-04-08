@@ -1,3 +1,4 @@
+/* button */
 #search-btn{
     white-space: nowrap;
     text-align: center;
@@ -7,11 +8,40 @@
     padding-left: 7px;
     border-radius: 10px;
 }
-
 #search-btn:hover{
     width: 100px;
 }
-
 #spinner{
     display: none;
+}
+/* input */
+.form{
+    width: 300px;
+    height: 50px;
+    position: relative;
+}
+.form input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid #2ecc71;
+    border-radius: 10px;
+    outline: none;
+    padding: 0 10px;
+    font-size: 25px;
+}
+.form label{
+    position: absolute;
+    top: 11px;
+    left: 25px;
+    color: gray;
+    text-transform: capitalize;
+    font-size: 18px;
+    transition: top .3s;
+    padding: 0 5px;
+    pointer-events: none;
+}
+.form input:focus ~ label {
+    top: -14px;
+    background-color: white;
 }
